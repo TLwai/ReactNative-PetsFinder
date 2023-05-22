@@ -43,35 +43,36 @@ export default function Found({navigation, route}) {
     </View>
   );
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    button: {},
-    buttonContainer: {
-      backgroundColor: 'black',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flexDirection: 'row',
-      height: '10%',
-    },
-    image: {
-      width: '100%',
-      height: '90%',
-    },
-    camButton: {
-      borderStyle: 'solid',
-      borderColor: 'white',
-      borderWidth: 2,
-      borderRadius: 15,
-      padding: 10,
-    },
-    buttons: {},
-    backButton: {
-      backgroundColor: 'white',
-      padding: 10,
-      borderColor: 'black',
-      borderWidth: 3,
-    },
-  });
+
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//     },
+//     button: {},
+//     buttonContainer: {
+//       backgroundColor: 'black',
+//       justifyContent: 'space-around',
+//       alignItems: 'center',
+//       flexDirection: 'row',
+//       height: '10%',
+//     },
+//     image: {
+//       width: '100%',
+//       height: '90%',
+//     },
+//     camButton: {
+//       borderStyle: 'solid',
+//       borderColor: 'white',
+//       borderWidth: 2,
+//       borderRadius: 15,
+//       padding: 10,
+//     },
+//     buttons: {},
+//     backButton: {
+//       backgroundColor: 'white',
+//       padding: 10,
+//       borderColor: 'black',
+//       borderWidth: 3,
+//     },
+//   });
   

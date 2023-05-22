@@ -28,7 +28,7 @@ const ForgotPasswordScreen = ({navigation}) => {
 
     const onSendPressed = () => {
         console.log('onSendPressed');
-        navigation.navigate("NewPassword");
+        navigation.navigate('NewPassword');
     }
 
     const onTermsOfUsePressed = () => {

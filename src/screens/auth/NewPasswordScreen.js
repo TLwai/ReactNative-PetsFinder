@@ -17,8 +17,8 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from '
 
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
-import { useNavigation } from '@react-navigation/native';
-import Navigator from '../../routes/drawer';
+//import { useNavigation } from '@react-navigation/native';
+//import Navigator from '../../routes/drawer';
 //import SocialSignalInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
 // npm install react-native-screens react-native-safe-area-context
 

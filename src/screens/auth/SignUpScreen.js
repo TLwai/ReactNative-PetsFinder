@@ -17,8 +17,8 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from '
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
-//import Navigator from '../routes/drawer';
-import SocialSignalInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
+import SocialSignalInButtons from '../../utils/SocialSignInButtons';
+import { localStyle } from '../../utils/LocalStyle';
 
 const SignUpScreen = () => {
     const { username, setUsername } = useState('');
@@ -48,8 +48,8 @@ const SignUpScreen = () => {
 
     return (
         <ScrollView>
-            <View style={styles.root}>
-                <Text style={styles.title}>Create an account</Text>
+            <View style={localStyle.signUpRootView}>
+                <Text style={localStyle.signUptitle}>Create an account</Text>
                 <CustomInput
                     placeholder="Username"
                     value={username}
@@ -74,10 +74,10 @@ const SignUpScreen = () => {
                 />
 
                 <FlatButton title="Register" onPress={ onRegisterPressed } type="PRIMARY"></FlatButton>
-                <Text style={styles.text}>
+                <Text style={localStyle.signUpText}>
                     By registering, you confirm that you accept our {' '}
-                    <Text style={styles.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {' '}
-                    <Text style={styles.link} onPress={onPrivacyPressed}>Privacy Policy</Text>
+                    <Text style={localStyle.signUpLink} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {' '}
+                    <Text style={localStyle.signUpLink} onPress={onPrivacyPressed}>Privacy Policy</Text>
                 </Text>
 
                 <SocialSignalInButtons />
@@ -91,26 +91,26 @@ const SignUpScreen = () => {
     );
 };
 
-const styles = StyleSheet.create({
-    root: {
-        alignItems: 'center',
-        padding: 20,
-    },
+// const styles = StyleSheet.create({
+//     rootView: {
+//         alignItems: 'center',
+//         padding: 20,
+//     },
 
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#051C60',
-        margin: 30,
-    },
-    text: {
-        color: 'grey',
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075',
-    }
-});
+//     title: {
+//         fontSize: 24,
+//         fontWeight: 'bold',
+//         color: '#051C60',
+//         margin: 30,
+//     },
+//     text: {
+//         color: 'grey',
+//         marginVertical: 10,
+//     },
+//     link: {
+//         color: '#FDB075',
+//     }
+// });
 
 
 export default SignUpScreen;

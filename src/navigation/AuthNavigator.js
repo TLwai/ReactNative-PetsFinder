@@ -27,6 +27,7 @@ import SignIn from '../screens/auth/SignInScreen';
 import SignUp from '../screens/auth/SignUpScreen';
 
 import ForgotPassword from '../screens/auth/ForgotPasswordScreen';
+import NewPassword from '../screens/auth/NewPasswordScreen';
 
 import Header from '../header/Header';
 
@@ -38,12 +39,12 @@ function EmptyScreen() {
 }
 
 function SignOut({navigation}) {
-  navigation.navigate('SignIn');
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>SignOut Screen</Text>
-    </View>
-  );
+  navigation.navigate('RootSignedOut', {screen: SignIn});
+  // return (
+  //   <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+  //     <Text>SignOut Screen</Text>
+  //   </View>
+  // );
 }
 
 
@@ -68,6 +69,7 @@ function RootSignedOut() {
       <Drawer.Screen name="SignUp" component={SignUp} />
       <Drawer.Screen name="Profile" component={EmptyScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      {/* <Stack.Screen name="NewPassword" component={NewPassword} /> */}
     </Drawer.Navigator>
   );
 }
@@ -120,6 +122,8 @@ function AuthNavigator() {
           <Stack.Group screenOptions={{headerShown: true}}>
             <Stack.Screen name="RootSignedOut" component={RootSignedOut} options={{headerTitle: () => <Header title=' PetsFinder' />}} />
             <Stack.Screen name="Home" component={DrawerNavigator} options={{headerShown: false}}/>
+            <Stack.Screen name="NewPassword" component={NewPassword} />
+            
             {/* <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} /> */}
           </Stack.Group>

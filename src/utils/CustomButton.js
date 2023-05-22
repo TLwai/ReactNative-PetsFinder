@@ -19,6 +19,8 @@ import {
     StyleSheet,
 } from 'react-native';
 
+import { localStyle } from './LocalStyle';
+
 const CustomButton = (props) => {
     return (
         <Pressable
@@ -27,31 +29,31 @@ const CustomButton = (props) => {
             android_ripple={{ color: '#00000050' }}
             style={({ pressed }) => [
                 { backgroundColor: pressed ? '#dddddd' : props.color },
-                styles.button,
+                localStyle.customBtn,
                 { ...props.style }
             ]}
         >
-            <Text style={styles.text}>
+            <Text style={localStyle.customBtnText}>
                 {props.title}
             </Text>
         </Pressable>
     )
 }
 
-const styles = StyleSheet.create({
-    text: {
-        color: '#ffffff',
-        fontSize: 20,
-        margin: 10,
-        textAlign: 'center',
-    },
-    button: {
-        width: 150,
-        height: 50,
-        alignItems: 'center',
-        borderRadius: 5,
-        margin: 10,
-    },
-})
+// const styles = StyleSheet.create({
+//     text: {
+//         color: '#ffffff',
+//         fontSize: 20,
+//         margin: 10,
+//         textAlign: 'center',
+//     },
+//     button: {
+//         width: 150,
+//         height: 50,
+//         alignItems: 'center',
+//         borderRadius: 5,
+//         margin: 10,
+//     },
+// })
 
 export default CustomButton;

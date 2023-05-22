@@ -12,72 +12,38 @@
  */
 // todo:chage to use the localStyle.js
 // todo: need to remove those no use code
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
+import React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Pressable,
+} from 'react-native';
+import {localStyle} from './LocalStyle';
 
-const FlatButton = ({ title, onPress, type = "PRIMARY", bgColor, fgColor }) => (
+const FlatButton = ({title, onPress, type = 'PRIMARY', bgColor, fgColor}) => (
   // <TouchableOpacity onPress={onPress}>
   <Pressable
     onPress={onPress}
-    style={[styles.button,
-    styles['button_' + type],
-    bgColor ? { backgroundColor: bgColor } : {}
+    style={[
+      localStyle.flatBtn, 
+      localStyle['flatBtn_'+ type],
+      bgColor ? {backgroundColor: bgColor} : {},
     ]}>
     {/* <View > */}
-    <Text
-      style={[styles.buttontext,
-      styles['buttontext_' + type],
-      fgColor ? { color: fgColor } : {}
-      ]}> {title}</Text>
+    <Text 
+    style={[localStyle.flatBtnText,
+      localStyle['flatBtnText_'+ type], 
+      fgColor ? {color: fgColor} : {}]}>
+      {' '}
+      {title}
+    </Text>
     {/* </View> */}
   </Pressable>
   // </TouchableOpacity>
-)
+);
 
-export default FlatButton
-
-const styles = StyleSheet.create({
-  button: {
-    borderRadius: 8,
-    paddingVertical: 14,
-    paddingHorizontal: 5,
-    //   backgroundColor: '#3b71F3',
-    width: 350,
-    marginTop: 5,
-  },
-  button_PRIMARY: {
-    //   backgroundColor: '#f01d71',
-    backgroundColor: '#3b71F3',
-
-  },
-  button_SECONDARY: {
-    backgroundColor: '#f01d71',
-    borderColor: '#3b71f3',
-    borderWidth: 2,
-  },
-  buttontext_TERTIARY: {
-    color: '#555555',
-  },
-  buttontext_WARNING: {
-    color: '#f01d71',
-  },
-  
-  buttontext: {
-
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    fontSize: 16,
-    textAlign: 'center',textAlign: 'center',
-  },
-
-  buttontext_PRIMARY: {
-    color: 'white',
-  },
-
-  buttontext_SECONDARY: {
-    color: '#3B71F3',
-  }
-
-})
+export default FlatButton;
 
 

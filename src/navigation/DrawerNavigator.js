@@ -21,19 +21,32 @@ import TabNavigator from './TabNavigator';
 import SignIn from '../screens/auth/SignInScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Header from '../header/Header';
-
+import CustomButton from '../utils/CustomButton';
+//import {useNavigation} from '@react-navigation/native';
 const Drawer = createDrawerNavigator();
 
 function EmptyScreen() {
   return <View />;
 }
 
+//const navigation = useNavigation();
+
 function SignOut({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>SignOut Screen</Text>
-    </View>
-  );
+
+  navigation.navigate('SignIn');
+  // return (
+  //   <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+  //     <Text>SignOut Screen</Text>
+      
+  //     <CustomButton
+  //       title="open Camera"
+  //       color="#0070ee"
+  //       onPressFunction={() => {
+  //         navigation.navigate('SignIn');
+  //       }}
+  //     />
+  //   </View>
+  // );
 }
 export default function DrawerNavigator() {
   return (

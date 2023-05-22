@@ -10,9 +10,7 @@
  * @modified by:    Wai L
  * @modified date:  16/5/2023
  */
-import ROUTES from './RoutesString';
-import IMGS from './ImagesStr';
-import COLORS from './ColorStr';
-import STRING from './String';
-
-export {ROUTES, IMGS, COLORS, STRING};
+export default {
+    bgPattern: require('../assets/pets_bg.jpg'),
+    logo: require('../assets/pawprints.jpg'),
+  };

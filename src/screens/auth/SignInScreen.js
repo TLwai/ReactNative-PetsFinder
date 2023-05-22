@@ -13,7 +13,7 @@
 
 // todo: need to remove those unused code
 
-import React, {useState, Component} from 'react';
+import React, {useState, useEffect, Component} from 'react';
 import {
   View,
   Text,
@@ -32,15 +32,26 @@ import FlatButton from '../../utils/FlatButton';
 import {user_login} from '../../api/userApi';
 import axios from 'axios';
 
-import SocialSignalInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
-import { localStyles } from '../../utils/LocalStyle';
+import SocialSignalInButtons from '../../utils/SocialSignInButtons';
 
+import CreateNotification from '../../components/Notification/CreateNotification';
+import createChannel from '../../components/Notification/CreateChannels';
+//import String from '../../constants/String';
+//import PushNotification from 'react-native-push-notification';
+import { localStyle } from '../../utils/LocalStyle';
 const SignIn = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
+
+  useEffect(() => {
+    
+     let result = createChannel();
+    
+  }, []);
+
 
   const onChangeUsername = val => {
     setUsername(val);
@@ -50,11 +61,14 @@ const SignIn = props => {
     // todo
     // 1. Simple validation the username & password
     // 2. Web API for checking the login & password
+
+//   CreateNotification({title : 'test X',  message : 'message X', bigText : 'bigText X', color : 'red', picture: "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"});
+
+
     if (username.length == 0) {
-        Alert.alert("Sign In", "Error: Please input the Username!");
-    }
-    else if (password.length == 0) {
-        Alert.alert("Sign In", "Error: Please input the Password");
+      Alert.alert('Sign In', 'Error: Please input the Username!');
+    } else if (password.length == 0) {
+      Alert.alert('Sign In', 'Error: Please input the Password');
     } else {
       navigation.navigate('Home', {screen: 'Missing'});
     }
@@ -71,10 +85,10 @@ const SignIn = props => {
 
   return (
     <View>
-      <View style={localStyles.signInView}>
+      <View style = {localStyle.signInView}>
         <Image
           source={Logo}
-          style={[localStyles.signInLogo, {height: height * 0.4}]}
+          style={[localStyle.signInLogo, {height: height * 0.4}]}
           resizeMode="contain"
         />
         <CustomInput
@@ -111,7 +125,5 @@ const SignIn = props => {
     </View>
   );
 };
-
-
 
 export default SignIn;

@@ -14,15 +14,16 @@
 // todo: need to remove those no use code
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { localStyle } from './LocalStyle';
 
 const CustomInput = ({ value, setValue, placeholder, secureTextEntry }) => {
     return (
-        <View style={styles.container}>
+        <View style={localStyle.customInputContainer}>
             <TextInput
                 value={value}
                 onChangeText={setValue}
                 placeholder={placeholder}
-                style={styles.input}
+                style={localStyle.customInput}
                 secureTextEntry={secureTextEntry}
             />
         </View>
@@ -30,24 +31,5 @@ const CustomInput = ({ value, setValue, placeholder, secureTextEntry }) => {
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white',
-        width: '100%',
-        height: 42,
-        borderColor: '#e8e8e8',
-        borderWidth: 1,
-        borderRadius: 5,
-
-        paddingHorizontal: 10,
-        marginVertical: 5,
-        paddingHorizontal: 10,
-    },
-    input: {
-        fontSize:16,
-        marginVertical:0,
-        
-    },
-});
 
 export default CustomInput;

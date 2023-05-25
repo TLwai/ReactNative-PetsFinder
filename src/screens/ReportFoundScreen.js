@@ -24,54 +24,33 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CustomButton from '../utils/CustomButton';
-import GlobalStyle from '../utils/LocalStyle';
+
+import MapView from 'react-native-maps';
 
 export default function ReportFound({navigation, route}) {
   return (
-    <View style={styles.body}>
-      <Text style={[styles.text]}>
-        Welcome
-      </Text>
-      <CustomButton
-        title="open Camera"
-        color="#0070ee"
-        onPressFunction={() => {
-          navigation.navigate('Camera');
+    <View>
+      <MapView
+        style={{width: '100%', height: '100%'}}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
         }}
       />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    button: {},
-    buttonContainer: {
-      backgroundColor: 'black',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flexDirection: 'row',
-      height: '10%',
-    },
-    image: {
-      width: '100%',
-      height: '90%',
-    },
-    camButton: {
-      borderStyle: 'solid',
-      borderColor: 'white',
-      borderWidth: 2,
-      borderRadius: 15,
-      padding: 10,
-    },
-    buttons: {},
-    backButton: {
-      backgroundColor: 'white',
-      padding: 10,
-      borderColor: 'black',
-      borderWidth: 3,
-    },
-  });
-  
+// <View style={styles.body}>
+//   <Text style={[styles.text]}>Welcome</Text>
+{
+  /* <CustomButton
+        title="open Camera"
+        color="#0070ee"
+        onPressFunction={() => {
+          navigation.navigate('Camera');
+        }}
+      /> */
+}
+// </View>

@@ -25,12 +25,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CustomButton from '../utils/CustomButton';
-import GlobalStyle from '../utils/LocalStyle';
+//import localStyle from '../utils/LocalStyle';
+import {missingScreen} from '../utils/styles';
 
 export default function Missing({navigation, route}) {
   return (
-    <View style={styles.body}>
-      <Text style={[styles.text]}>
+    <View style={missingScreen.container}>
+      <Text>
         Welcome
       </Text>
       <CustomButton
@@ -44,35 +45,35 @@ export default function Missing({navigation, route}) {
   );
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    button: {},
-    buttonContainer: {
-      backgroundColor: 'black',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flexDirection: 'row',
-      height: '10%',
-    },
-    image: {
-      width: '100%',
-      height: '90%',
-    },
-    camButton: {
-      borderStyle: 'solid',
-      borderColor: 'white',
-      borderWidth: 2,
-      borderRadius: 15,
-      padding: 10,
-    },
-    buttons: {},
-    backButton: {
-      backgroundColor: 'white',
-      padding: 10,
-      borderColor: 'black',
-      borderWidth: 3,
-    },
-  });
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//     },
+//     button: {},
+//     buttonContainer: {
+//       backgroundColor: 'black',
+//       justifyContent: 'space-around',
+//       alignItems: 'center',
+//       flexDirection: 'row',
+//       height: '10%',
+//     },
+//     image: {
+//       width: '100%',
+//       height: '90%',
+//     },
+//     camButton: {
+//       borderStyle: 'solid',
+//       borderColor: 'white',
+//       borderWidth: 2,
+//       borderRadius: 15,
+//       padding: 10,
+//     },
+//     buttons: {},
+//     backButton: {
+//       backgroundColor: 'white',
+//       padding: 10,
+//       borderColor: 'black',
+//       borderWidth: 3,
+//     },
+//   });
   

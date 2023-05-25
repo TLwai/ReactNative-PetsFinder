@@ -38,7 +38,10 @@ import CreateNotification from '../../components/Notification/CreateNotification
 import createChannel from '../../components/Notification/CreateChannels';
 //import String from '../../constants/String';
 //import PushNotification from 'react-native-push-notification';
-import { localStyle } from '../../utils/LocalStyle';
+//import { localStyle } from '../../utils/LocalStyle';
+//import BadgeNumberAndroid from 'react-native-shortcut-badger';
+import {signInScreen} from '../../utils/styles';
+
 const SignIn = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -49,7 +52,8 @@ const SignIn = props => {
   useEffect(() => {
     
      let result = createChannel();
-    
+     //BadgeNumberAndroid.setNumber(5);
+
   }, []);
 
 
@@ -85,10 +89,10 @@ const SignIn = props => {
 
   return (
     <View>
-      <View style = {localStyle.signInView}>
+      <View style = {signInScreen.body}>
         <Image
           source={Logo}
-          style={[localStyle.signInLogo, {height: height * 0.4}]}
+          style={[signInScreen.logo, {height: height * 0.4}]}
           resizeMode="contain"
         />
         <CustomInput

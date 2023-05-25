@@ -18,13 +18,11 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from '
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
 import { useNavigation } from '@react-navigation/native';
-//import Navigator from '../routes/drawer';
-//import SocialSignalInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
+import { forgotPasswordScreen } from '../../utils/styles';
 
 const ForgotPasswordScreen = ({navigation}) => {
     const { code, setCode } = useState('');
     const { height } = useWindowDimensions();
-   // const navigation = useNavigation();
 
     const onSendPressed = () => {
         console.log('onSendPressed');
@@ -44,10 +42,10 @@ const ForgotPasswordScreen = ({navigation}) => {
 
     return (
         <ScrollView>
-            <View style={styles.root}>
-                <Text style={styles.title}>Reset your password</Text>
+            <View style={forgotPasswordScreen.root}>
+                <Text style={forgotPasswordScreen.title}>Reset your password</Text>
                 <Text
-                    style={styles.label}
+                    style={forgotPasswordScreen.label}
                 >Username/Email*
                 </Text>
                 <CustomInput
@@ -74,29 +72,7 @@ const ForgotPasswordScreen = ({navigation}) => {
     );
 };
 
-const styles = StyleSheet.create({
-    root: {
-        alignItems: 'flex-start',
-        padding: 20,
-    },
 
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#051C60',
-        margin: 30,
-    },
-    text: {
-        color: 'grey',
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075',
-    },
-    label: {
-     //   textAlign: 'left',
-    }
-});
 
 
 export default ForgotPasswordScreen;

@@ -10,10 +10,10 @@
  * @modified by:    Wai L
  * @modified date:  16/5/2023
  */
-// todo: need to remove those unused code
+
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-//import {COLORS} from '../../constants';
+
 
 const Home = () => {
   return (

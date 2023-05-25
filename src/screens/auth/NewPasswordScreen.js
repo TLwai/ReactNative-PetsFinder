@@ -17,19 +17,14 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from '
 
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
-//import { useNavigation } from '@react-navigation/native';
-//import Navigator from '../../routes/drawer';
-//import SocialSignalInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
+import { newPasswordScreen } from '../../utils/styles';
+
 // npm install react-native-screens react-native-safe-area-context
 
 const NewPasswordScreen = ({navigation}) => {
     const { code, setCode } = useState('');
     const { newPassword, setNewPassword } = useState('');
-
-    const { height } = useWindowDimensions();
-   // const navigation = useNavigation();
-
-
+    const { height } = useWindowDimensions();  
 
     const onConfirmPressed = () => {
         console.log('onConfirmPressed');
@@ -51,12 +46,12 @@ const NewPasswordScreen = ({navigation}) => {
 
     return (
         <ScrollView>
-            <View style={styles.root}>
+            <View style={newPasswordScreen.root}>
                 <Text
-                    style={styles.title}>Reset your password
+                    style={newPasswordScreen.title}>Reset your password
                 </Text>
                 <Text
-                    style={styles.label}
+                    style={newPasswordScreen.label}
                 >Confirmation Code*
                 </Text>
                 <CustomInput
@@ -65,7 +60,7 @@ const NewPasswordScreen = ({navigation}) => {
                     setValue={setCode}
                 />
                 <Text
-                    style={styles.label}
+                    style={newPasswordScreen.label}
                 >New Password*
                 </Text>
                 <CustomInput
@@ -91,33 +86,6 @@ const NewPasswordScreen = ({navigation}) => {
     );
 };
 
-const styles = StyleSheet.create({
-    root: {
-        // alignItems: 'flex-start',
-        padding: 20,
-    },
-
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#051C60',
-        margin: 30,
-    },
-    text: {
-        color: 'grey',
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075',
-    },
-    label: {
-
-        textAlign: 'left',
-
-
-
-    }
-});
 
 
 export default NewPasswordScreen;

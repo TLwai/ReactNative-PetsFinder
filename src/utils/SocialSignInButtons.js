@@ -13,7 +13,7 @@
 import React from 'react';
 
 import FlatButton from './FlatButton';
-import ColorString from '../constants/ColorStr';
+import Color from '../constants/ColorStr';
 
 // todo:chage to use the localStyle.js
 export default SocialSignInButtons = () => {
@@ -24,8 +24,8 @@ export default SocialSignInButtons = () => {
         onPress={() => {
           // todo facebook signin
         }}
-        bgColor= {ColorString.facebookBtnBgColor}
-        fgColor={ColorString.facebookBtnFgColor}
+        bgColor= {Color.facebookBtnBgColor}
+        fgColor={Color.facebookBtnFgColor}
       />
       <FlatButton
         title="Sign In with Google"
@@ -33,16 +33,16 @@ export default SocialSignInButtons = () => {
           // todo google signin
         }}
         
-        bgColor={ColorString.googleBtnBgColor}
-        fgColor={ColorString.googleBtnFgColor}
+        bgColor={Color.googleBtnBgColor}
+        fgColor={Color.googleBtnFgColor}
       />
       <FlatButton
         title="Sign In with Twitter"
         onPress={() => {
            // todo twitter signin
         }}
-        bgColor={ColorString.twitterBtnBgColor}
-        fgColor={ColorString.twitterBtnFgColor}
+        bgColor={Color.twitterBtnBgColor}
+        fgColor={Color.twitterBtnFgColor}
       />
     </>
   );

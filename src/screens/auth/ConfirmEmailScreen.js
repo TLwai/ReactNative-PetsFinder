@@ -26,6 +26,7 @@ import {useNavigation} from '@react-navigation/native';
 //todo relocate those shared stubb into the ncFramework
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
+import { confirmEmailScreen } from '../../utils/styles';
 
 
 
@@ -46,8 +47,8 @@ const ConfirmEmailScreen = () => {
 
   return (
     <ScrollView>
-      <View style={styles.root}>
-        <Text style={styles.title}>Confirm your email</Text>
+      <View style={confirmEmailScreen.root}>
+        <Text style={confirmEmailScreen.title}>Confirm your email</Text>
         <CustomInput
           placeholder="Enter your confirmation code"
           value={code}
@@ -81,25 +82,25 @@ const ConfirmEmailScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  root: {
-    alignItems: 'center',
-    padding: 20,
-  },
+// const styles = StyleSheet.create({
+//   root: {
+//     alignItems: 'center',
+//     padding: 20,
+//   },
 
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#051C60',
-    margin: 30,
-  },
-  text: {
-    color: 'grey',
-    marginVertical: 10,
-  },
-  link: {
-    color: '#FDB075',
-  },
-});
+//   title: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     color: '#051C60',
+//     margin: 30,
+//   },
+//   text: {
+//     color: 'grey',
+//     marginVertical: 10,
+//   },
+//   link: {
+//     color: '#FDB075',
+//   },
+// });
 
 export default ConfirmEmailScreen;

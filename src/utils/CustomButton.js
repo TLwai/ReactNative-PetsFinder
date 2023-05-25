@@ -13,32 +13,26 @@
 // todo:chage to use the localStyle.js
 // todo: need to remove those no use code
 import React from 'react';
-import {
-    Pressable,
-    Text,
-    StyleSheet,
-} from 'react-native';
+import {Pressable, Text, StyleSheet} from 'react-native';
 
-import { localStyle } from './LocalStyle';
+//import { localStyle } from './LocalStyle';
+import {customBtn} from './styles';
 
-const CustomButton = (props) => {
-    return (
-        <Pressable
-            onPress={props.onPressFunction}
-            hitSlop={{ top: 10, bottom: 10, right: 10, left: 10 }}
-            android_ripple={{ color: '#00000050' }}
-            style={({ pressed }) => [
-                { backgroundColor: pressed ? '#dddddd' : props.color },
-                localStyle.customBtn,
-                { ...props.style }
-            ]}
-        >
-            <Text style={localStyle.customBtnText}>
-                {props.title}
-            </Text>
-        </Pressable>
-    )
-}
+const CustomButton = props => {
+  return (
+    <Pressable
+      onPress={props.onPressFunction}
+      hitSlop={{top: 10, bottom: 10, right: 10, left: 10}}
+      android_ripple={{color: '#00000050'}}
+      style={({pressed}) => [
+        {backgroundColor: pressed ? '#dddddd' : props.color},
+        customBtn.button,
+        {...props.style},
+      ]}>
+      <Text style={customBtn.text}>{props.title}</Text>
+    </Pressable>
+  );
+};
 
 // const styles = StyleSheet.create({
 //     text: {

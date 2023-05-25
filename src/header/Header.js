@@ -13,54 +13,27 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native'
 //import { MaterialIcons } from '@expo/vector-icons'
-import { images } from '../utils/LocalStyle'
+//import { images } from '../utils/LocalStyle'
+import {images, header} from '../utils/styles'
 
 const Header = ({ title }) => {
 
  return (
     <ImageBackground
-      style={styles.header}
+      style={header.header}
       source={images.headerBackground}
     >
       {/* <MaterialIcons name='menu' size={28} onPress={openMenu} style={styles.icon} /> */}
-      <View style={styles.headerContent}>
+      <View style={header.headerContent}>
         <Image
           source={images.headerImage}
-          style={styles.headerImage}
+          style={header.headerImage}
         />
-        <Text style={styles.headerText} >{title}</Text>
+        <Text style={header.headerText} >{title}</Text>
       </View>
     </ImageBackground>
   )
 }
 
-const styles = StyleSheet.create({
-  header: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  },
-  headerText: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#333',
-    letterSpacing: 1,
-  },
-  headerContent: {
-    flexDirection: 'row'
-  },
-  icon: {
-    position: 'absolute',
-    left: 1,
-  },
-  headerImage: {
-    height: 34,
-    width: 28,
-    marginHorizontal: 1,
-  }
-
-})
 
 export default Header

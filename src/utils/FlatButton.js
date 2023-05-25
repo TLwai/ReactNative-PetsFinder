@@ -20,21 +20,22 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import {localStyle} from './LocalStyle';
+//import {localStyle} from './LocalStyle';
+import { flatBtn } from './styles';
 
 const FlatButton = ({title, onPress, type = 'PRIMARY', bgColor, fgColor}) => (
   // <TouchableOpacity onPress={onPress}>
   <Pressable
     onPress={onPress}
     style={[
-      localStyle.flatBtn, 
-      localStyle['flatBtn_'+ type],
+      flatBtn.button, 
+      flatBtn[type],
       bgColor ? {backgroundColor: bgColor} : {},
     ]}>
     {/* <View > */}
     <Text 
-    style={[localStyle.flatBtnText,
-      localStyle['flatBtnText_'+ type], 
+    style={[flatBtn.text,
+      flatBtn['Text_'+ type], 
       fgColor ? {color: fgColor} : {}]}>
       {' '}
       {title}

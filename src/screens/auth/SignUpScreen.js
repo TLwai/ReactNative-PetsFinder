@@ -18,7 +18,8 @@ import { useNavigation } from '@react-navigation/native';
 import CustomInput from '../../utils/CustomInput';
 import FlatButton from '../../utils/FlatButton';
 import SocialSignalInButtons from '../../utils/SocialSignInButtons';
-import { localStyle } from '../../utils/LocalStyle';
+//import { localStyle } from '../../utils/LocalStyle';
+import {signUpScreen} from '../../utils/styles';
 
 const SignUpScreen = () => {
     const { username, setUsername } = useState('');
@@ -48,8 +49,8 @@ const SignUpScreen = () => {
 
     return (
         <ScrollView>
-            <View style={localStyle.signUpRootView}>
-                <Text style={localStyle.signUptitle}>Create an account</Text>
+            <View style={signUpScreen.rootView}>
+                <Text style={signUpScreen.title}>Create an account</Text>
                 <CustomInput
                     placeholder="Username"
                     value={username}
@@ -74,10 +75,10 @@ const SignUpScreen = () => {
                 />
 
                 <FlatButton title="Register" onPress={ onRegisterPressed } type="PRIMARY"></FlatButton>
-                <Text style={localStyle.signUpText}>
+                <Text style={signUpScreen.text}>
                     By registering, you confirm that you accept our {' '}
-                    <Text style={localStyle.signUpLink} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {' '}
-                    <Text style={localStyle.signUpLink} onPress={onPrivacyPressed}>Privacy Policy</Text>
+                    <Text style={signUpScreen.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {' '}
+                    <Text style={signUpScreen.link} onPress={onPrivacyPressed}>Privacy Policy</Text>
                 </Text>
 
                 <SocialSignalInButtons />
@@ -91,26 +92,7 @@ const SignUpScreen = () => {
     );
 };
 
-// const styles = StyleSheet.create({
-//     rootView: {
-//         alignItems: 'center',
-//         padding: 20,
-//     },
 
-//     title: {
-//         fontSize: 24,
-//         fontWeight: 'bold',
-//         color: '#051C60',
-//         margin: 30,
-//     },
-//     text: {
-//         color: 'grey',
-//         marginVertical: 10,
-//     },
-//     link: {
-//         color: '#FDB075',
-//     }
-// });
 
 
 export default SignUpScreen;

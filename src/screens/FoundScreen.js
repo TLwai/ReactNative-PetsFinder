@@ -23,16 +23,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CustomButton from '../utils/CustomButton';
-import LocalStyle from '../utils/LocalStyle';
+//import localStyle from '../utils/LocalStyle';
+import {foundScreen} from '../utils/styles';
 import Header from '../header/Header';
 
 export default function Found({navigation, route}) {
   return (
-    <View style={styles.body}>
-        <Header title = "Found"/>
-      <Text style={[styles.text]}>
-        Welcome Found
-      </Text>
+    <View style={foundScreen.body}>
+      <Header title="Found" />
+      <Text style={foundScreen.text}>Welcome Found</Text>
       <CustomButton
         title="open Camera"
         color="#0070ee"
@@ -44,35 +43,3 @@ export default function Found({navigation, route}) {
   );
 }
 
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//     },
-//     button: {},
-//     buttonContainer: {
-//       backgroundColor: 'black',
-//       justifyContent: 'space-around',
-//       alignItems: 'center',
-//       flexDirection: 'row',
-//       height: '10%',
-//     },
-//     image: {
-//       width: '100%',
-//       height: '90%',
-//     },
-//     camButton: {
-//       borderStyle: 'solid',
-//       borderColor: 'white',
-//       borderWidth: 2,
-//       borderRadius: 15,
-//       padding: 10,
-//     },
-//     buttons: {},
-//     backButton: {
-//       backgroundColor: 'white',
-//       padding: 10,
-//       borderColor: 'black',
-//       borderWidth: 3,
-//     },
-//   });
-  
